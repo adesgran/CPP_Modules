@@ -9,6 +9,11 @@ class PhoneBook {
 		~PhoneBook(void);
 		void	add_contact(void);
 		void	display_contact(int index);
+		void	display_list(void);
+		void	ADD(void);
+		void	SEARCH(void);
+		void	EXIT(void);
+		void	launch(void);
 
 	private:
 		Contact _contacts[8];

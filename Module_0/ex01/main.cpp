@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:38:29 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/07 21:15:59 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/08 11:48:11 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(void)
 {
 	PhoneBook pb;
 
-	pb.add_contact();
-	pb.display_contact(0);
+	pb.launch();
 	return (0);
 }

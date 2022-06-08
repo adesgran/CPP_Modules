@@ -7,9 +7,10 @@ class Contact {
 		~Contact(void);
 		void	set_index(int index);
 		int		index(void);
-		void	add(void);
+		void	add(int index);
 		void	display_all(void);
 		void	display_list(void);
+		bool	isEmpty(void);
 	
 	private:
 		int		_index;
