@@ -6,17 +6,18 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:19:15 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/12 17:39:00 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/12 23:52:12 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Fixed.hpp>
 
+const int	Fixed::_n_bits = 8;
+
 Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->_rawBits = 0;
-	//this->_n_bits = 8;
 }
 
 Fixed::Fixed(const Fixed &fixed)
