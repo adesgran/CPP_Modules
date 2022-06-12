@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:15:22 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/12 18:19:01 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/12 23:52:54 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Fixed {
 
 	private:
 		int	_rawBits;
-		static const int	_n_bits = 8;
+		static const int	_n_bits;
 
 };
 

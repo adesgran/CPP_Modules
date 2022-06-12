@@ -6,11 +6,13 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:19:15 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/12 18:23:28 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/12 23:53:18 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Fixed.hpp>
+
+const int	Fixed::_n_bits = 8;
 
 Fixed::Fixed(void)
 {
