@@ -20,11 +20,11 @@ ${NAME}: ${O_FILES}
 
 clean:
 	@echo "\n\033[0;31mRemoving objects files...\033[0m"
-	@rm -r ${O_FILES}
+	@rm -f ${O_FILES}
 
 fclean: clean
 	@echo "\n\033[0;31mRemoving ${NAME} executable...\033[0m\n"
-	@rm -r ${NAME}
+	@rm -f ${NAME}
 
 compare:
 	cat 19920104_091532.log | cut -f 2 -d " " > s1
