@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:28:27 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/13 17:10:14 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:55:53 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void	ClapTrap::attack(const std::string &target)
 		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " is dead" << std::endl;
 		return ;
 	}
+	if (this->_energyPoints == 0)
+	{
+		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " don't get enougth energy" << std::endl;
+		return ;
+	}
 	std::cout << "ClapTrap \033[0;32m" << this->_name << "\033[0m attack \033[0;31m" << target << "\033[0m, causing \033[0;31m" << this->_attackDamage << "\033[0m points of damage!" << std::endl;
 	if (this->_attackDamage == 0)
 		std::cout << "\033[0;33mClapTrap attack seems to be null, preserve your energy points\033[0m" << std::endl;
@@ -101,6 +106,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->_hitPoints == 0)
 	{
 		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " is already dead" << std::endl;
+		return ;
+	}
+	if (this->_energyPoints == 0)
+	{
+		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " don't get enougth energy" << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap \033[0;32m" << this->_name << "\033[0m recover \033[0;32m" << amount << "\033[0m life points by repairing himself" << std::endl;
