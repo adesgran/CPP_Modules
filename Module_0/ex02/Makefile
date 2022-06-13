@@ -26,4 +26,10 @@ fclean: clean
 	@echo "\n\033[0;31mRemoving ${NAME} executable...\033[0m\n"
 	@rm -r ${NAME}
 
+compare:
+	cat 19920104_091532.log | cut -f 2 -d " " > s1
+	./test | cut -f 2 -d " " > s2
+	diff s1 s2
+	rm s1 s2
+
 re: fclean all
