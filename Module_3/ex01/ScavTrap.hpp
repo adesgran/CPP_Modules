@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:30:01 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/14 13:42:03 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:54:52 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define SCAVTRAP_HPP
 
 # include <ClapTrap.hpp>
+# include <iostream>
+# include <string>
 
 class ScavTrap : private ClapTrap {
 	public:
