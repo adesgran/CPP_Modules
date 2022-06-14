@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 16:10:30 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/12 16:51:19 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:30:23 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ void	display_msg(int i)
 		case 4:
 			std::cout << "[ ERROR ]" << std::endl;
 			harl.complain("error");
+			break ;
+		default :
+			std::cout << "Unknown error type" << std::endl;
 			break ;
 	}
 }
