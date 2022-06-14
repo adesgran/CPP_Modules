@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:07:13 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/10 13:35:06 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:38:27 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ void	randomChump( std::string name );
 
 int	main( void )
 {
-	Zombie noname;
-	noname.announce();
 	Zombie *joe = newZombie("Joe");
+	joe->announce();
 	randomChump("Mike");
 	delete joe;
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:17:38 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/10 13:22:10 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:34:06 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	randomChump( std::string name )
 {
 	Zombie	zombie;
 
-	zombie.set_name(name);
+	zombie.setName(name);
 	zombie.announce();
 }

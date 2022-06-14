@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:14:03 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/10 13:24:17 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:42:18 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 Zombie* newZombie( std::string name)
 {
-	Zombie	*res = new Zombie();
+	Zombie	*res = new Zombie(name);
 
-	res->set_name(name);
 	return (res);
 }
