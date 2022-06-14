@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:07:07 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/10 13:32:41 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/14 15:41:49 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 Zombie::Zombie(void)
 {
+	std::cout << "Zombie Constructor called" << std::endl;
+}
 
+Zombie::Zombie(std::string name)
+{
+	std::cout << "Zombie Constructor called with name = " << name << std::endl;
+	this->name = name;
 }
 
 Zombie::~Zombie(void)
@@ -30,7 +36,12 @@ void	Zombie::announce( void )
 		std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void	Zombie::set_name( std::string name )
+void	Zombie::setName( std::string name )
 {
 	this->name = name;
+}
+
+const std::string	Zombie::getName(void) const
+{
+	return (this->name);
 }
