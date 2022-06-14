@@ -6,14 +6,11 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:38:17 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/08 12:13:32 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:52:34 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <Contact.hpp>
-#include <stdlib.h>
-#include <string.h>
 
 Contact::Contact(void)
 {

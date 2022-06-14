@@ -6,13 +6,11 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:37:56 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/08 12:00:51 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:15:21 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <PhoneBook.hpp>
-#include <stdlib.h>
-#include <iostream>
 
 PhoneBook::PhoneBook(void)
 {
@@ -70,7 +68,7 @@ void	PhoneBook::SEARCH(void)
 			exit (1);
 		std::cout << std::endl;
 		for (i = 0; input[i]; i++)
-			res += 1 - std::isdigit(input[i]);
+			res += (std::isdigit(input[i]) ? 0 : 1);
 		if (!res && atoi(input.c_str()) >= 0 && atoi(input.c_str()) <= 8)
 		{
 			if (this->_contacts[atoi(input.c_str())].isEmpty())

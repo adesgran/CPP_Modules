@@ -1,6 +1,11 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+# include <iostream>
+# include <string>
+# include <stdlib.h>
+# include <string.h>
+
 class Contact {
 	public:
 		Contact(void);

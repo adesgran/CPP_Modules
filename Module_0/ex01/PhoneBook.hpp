@@ -2,6 +2,10 @@
 # define PHONEBOOK_HPP
 
 # include <Contact.hpp>
+# include <string>
+# include <stdlib.h>
+# include <string.h>
+# include <iostream>
 
 class PhoneBook {
 	public:
