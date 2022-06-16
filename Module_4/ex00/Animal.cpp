@@ -6,11 +6,17 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 13:55:45 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/16 14:29:00 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:35:46 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Animal.hpp>
+
+Animal::Animal(void)
+{
+	std::cout << "Animal empty constructor called" << std::endl;
+	this->type = "NoType";
+}
 
 Animal::Animal(std::string type)
 {

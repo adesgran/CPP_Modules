@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:42:40 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/16 14:51:19 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:26:56 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat( const WrongCat &wrongcat );
 		~WrongCat( void );
 		WrongCat &operator=( const WrongCat &wrongcat );
-		void	makeSound( void ) const;		
+		void	makeSound( void ) const;	
 
 	private:
 
