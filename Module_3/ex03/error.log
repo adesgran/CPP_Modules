@@ -1,0 +1,240 @@
+In file included from DiamondTrap.cpp:13:
+./DiamondTrap.hpp:21:7: error: virtual base ‘ClapTrap’ inaccessible in ‘DiamondTrap’ due to ambiguity [-Werror=extra]
+   21 | class DiamondTrap : public ScavTrap, public FragTrap
+      |       ^~~~~~~~~~~
+DiamondTrap.cpp: In constructor ‘DiamondTrap::DiamondTrap()’:
+DiamondTrap.cpp:18:8: error: invalid use of ‘ScavTrap::ScavTrap’
+   18 |  this->ScavTrap.setHitPoints(FragTrap::getHitPoints());
+      |        ^~~~~~~~
+DiamondTrap.cpp:19:8: error: request for member ‘setEnergyPoints’ is ambiguous
+   19 |  this->setEnergyPoints(ScavTrap::getEnergyPoints());
+      |        ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:35:8: note: candidates are: ‘void ClapTrap::setEnergyPoints(unsigned int)’
+   35 |   void setEnergyPoints( unsigned int value );
+      |        ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:35:8: note:                 ‘void ClapTrap::setEnergyPoints(unsigned int)’
+DiamondTrap.cpp:20:8: error: request for member ‘setAttackDamage’ is ambiguous
+   20 |  this->setAttackDamage(FragTrap::getAttackDamage());
+      |        ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:36:8: note: candidates are: ‘void ClapTrap::setAttackDamage(unsigned int)’
+   36 |   void setAttackDamage( unsigned int value );
+      |        ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:36:8: note:                 ‘void ClapTrap::setAttackDamage(unsigned int)’
+DiamondTrap.cpp: In constructor ‘DiamondTrap::DiamondTrap(std::string)’:
+DiamondTrap.cpp:26:8: error: request for member ‘setName’ is ambiguous
+   26 |  this->setName(name);
+      |        ^~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:33:8: note: candidates are: ‘void ClapTrap::setName(std::string)’
+   33 |   void setName( std::string name );
+      |        ^~~~~~~
+./ClapTrap.hpp:33:8: note:                 ‘void ClapTrap::setName(std::string)’
+DiamondTrap.cpp:27:8: error: request for member ‘setHitPoints’ is ambiguous
+   27 |  this->setHitPoints(FragTrap::getHitPoints());
+      |        ^~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:34:8: note: candidates are: ‘void ClapTrap::setHitPoints(unsigned int)’
+   34 |   void setHitPoints( unsigned int value );
+      |        ^~~~~~~~~~~~
+./ClapTrap.hpp:34:8: note:                 ‘void ClapTrap::setHitPoints(unsigned int)’
+DiamondTrap.cpp:28:8: error: request for member ‘setEnergyPoints’ is ambiguous
+   28 |  this->setEnergyPoints(ScavTrap::getEnergyPoints());
+      |        ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:35:8: note: candidates are: ‘void ClapTrap::setEnergyPoints(unsigned int)’
+   35 |   void setEnergyPoints( unsigned int value );
+      |        ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:35:8: note:                 ‘void ClapTrap::setEnergyPoints(unsigned int)’
+DiamondTrap.cpp:29:8: error: request for member ‘setAttackDamage’ is ambiguous
+   29 |  this->setAttackDamage(FragTrap::getAttackDamage());
+      |        ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:36:8: note: candidates are: ‘void ClapTrap::setAttackDamage(unsigned int)’
+   36 |   void setAttackDamage( unsigned int value );
+      |        ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:36:8: note:                 ‘void ClapTrap::setAttackDamage(unsigned int)’
+DiamondTrap.cpp: In copy constructor ‘DiamondTrap::DiamondTrap(const DiamondTrap&)’:
+DiamondTrap.cpp:32:79: error: ‘name’ was not declared in this scope; did you mean ‘_name’?
+   32 | DiamondTrap::DiamondTrap(const DiamondTrap &diamondtrap) : ScavTrap::ScavTrap(name), FragTrap::FragTrap(name)
+      |                                                                               ^~~~
+      |                                                                               _name
+DiamondTrap.cpp:32:1: error: base class ‘class ClapTrap’ should be explicitly initialized in the copy constructor [-Werror=extra]
+   32 | DiamondTrap::DiamondTrap(const DiamondTrap &diamondtrap) : ScavTrap::ScavTrap(name), FragTrap::FragTrap(name)
+      | ^~~~~~~~~~~
+DiamondTrap.cpp:35:8: error: request for member ‘setName’ is ambiguous
+   35 |  this->setName(diamondtrap.getName());
+      |        ^~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:33:8: note: candidates are: ‘void ClapTrap::setName(std::string)’
+   33 |   void setName( std::string name );
+      |        ^~~~~~~
+./ClapTrap.hpp:33:8: note:                 ‘void ClapTrap::setName(std::string)’
+DiamondTrap.cpp:35:28: error: request for member ‘getName’ is ambiguous
+   35 |  this->setName(diamondtrap.getName());
+      |                            ^~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:28:16: note: candidates are: ‘std::string ClapTrap::getName() const’
+   28 |   std::string  getName( void ) const;
+      |                ^~~~~~~
+./ClapTrap.hpp:28:16: note:                 ‘std::string ClapTrap::getName() const’
+DiamondTrap.cpp:36:8: error: request for member ‘setHitPoints’ is ambiguous
+   36 |  this->setHitPoints(diamondtrap.getHitPoints());
+      |        ^~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:34:8: note: candidates are: ‘void ClapTrap::setHitPoints(unsigned int)’
+   34 |   void setHitPoints( unsigned int value );
+      |        ^~~~~~~~~~~~
+./ClapTrap.hpp:34:8: note:                 ‘void ClapTrap::setHitPoints(unsigned int)’
+DiamondTrap.cpp:36:33: error: request for member ‘getHitPoints’ is ambiguous
+   36 |  this->setHitPoints(diamondtrap.getHitPoints());
+      |                                 ^~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:29:16: note: candidates are: ‘unsigned int ClapTrap::getHitPoints() const’
+   29 |   unsigned int getHitPoints( void ) const;
+      |                ^~~~~~~~~~~~
+./ClapTrap.hpp:29:16: note:                 ‘unsigned int ClapTrap::getHitPoints() const’
+DiamondTrap.cpp:37:8: error: request for member ‘setEnergyPoints’ is ambiguous
+   37 |  this->setEnergyPoints(diamondtrap.getEnergyPoints());
+      |        ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:35:8: note: candidates are: ‘void ClapTrap::setEnergyPoints(unsigned int)’
+   35 |   void setEnergyPoints( unsigned int value );
+      |        ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:35:8: note:                 ‘void ClapTrap::setEnergyPoints(unsigned int)’
+DiamondTrap.cpp:37:36: error: request for member ‘getEnergyPoints’ is ambiguous
+   37 |  this->setEnergyPoints(diamondtrap.getEnergyPoints());
+      |                                    ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:30:16: note: candidates are: ‘unsigned int ClapTrap::getEnergyPoints() const’
+   30 |   unsigned int getEnergyPoints( void ) const;
+      |                ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:30:16: note:                 ‘unsigned int ClapTrap::getEnergyPoints() const’
+DiamondTrap.cpp:38:8: error: request for member ‘setAttackDamage’ is ambiguous
+   38 |  this->setAttackDamage(diamondtrap.getAttackDamage());
+      |        ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:36:8: note: candidates are: ‘void ClapTrap::setAttackDamage(unsigned int)’
+   36 |   void setAttackDamage( unsigned int value );
+      |        ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:36:8: note:                 ‘void ClapTrap::setAttackDamage(unsigned int)’
+DiamondTrap.cpp:38:36: error: request for member ‘getAttackDamage’ is ambiguous
+   38 |  this->setAttackDamage(diamondtrap.getAttackDamage());
+      |                                    ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:31:16: note: candidates are: ‘unsigned int ClapTrap::getAttackDamage() const’
+   31 |   unsigned int getAttackDamage( void ) const;
+      |                ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:31:16: note:                 ‘unsigned int ClapTrap::getAttackDamage() const’
+DiamondTrap.cpp: In member function ‘DiamondTrap& DiamondTrap::operator=(const DiamondTrap&)’:
+DiamondTrap.cpp:49:8: error: request for member ‘setName’ is ambiguous
+   49 |  this->setName(diamondtrap.getName());
+      |        ^~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:33:8: note: candidates are: ‘void ClapTrap::setName(std::string)’
+   33 |   void setName( std::string name );
+      |        ^~~~~~~
+./ClapTrap.hpp:33:8: note:                 ‘void ClapTrap::setName(std::string)’
+DiamondTrap.cpp:49:28: error: request for member ‘getName’ is ambiguous
+   49 |  this->setName(diamondtrap.getName());
+      |                            ^~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:28:16: note: candidates are: ‘std::string ClapTrap::getName() const’
+   28 |   std::string  getName( void ) const;
+      |                ^~~~~~~
+./ClapTrap.hpp:28:16: note:                 ‘std::string ClapTrap::getName() const’
+DiamondTrap.cpp:50:8: error: request for member ‘setHitPoints’ is ambiguous
+   50 |  this->setHitPoints(diamondtrap.getHitPoints());
+      |        ^~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:34:8: note: candidates are: ‘void ClapTrap::setHitPoints(unsigned int)’
+   34 |   void setHitPoints( unsigned int value );
+      |        ^~~~~~~~~~~~
+./ClapTrap.hpp:34:8: note:                 ‘void ClapTrap::setHitPoints(unsigned int)’
+DiamondTrap.cpp:50:33: error: request for member ‘getHitPoints’ is ambiguous
+   50 |  this->setHitPoints(diamondtrap.getHitPoints());
+      |                                 ^~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:29:16: note: candidates are: ‘unsigned int ClapTrap::getHitPoints() const’
+   29 |   unsigned int getHitPoints( void ) const;
+      |                ^~~~~~~~~~~~
+./ClapTrap.hpp:29:16: note:                 ‘unsigned int ClapTrap::getHitPoints() const’
+DiamondTrap.cpp:51:8: error: request for member ‘setEnergyPoints’ is ambiguous
+   51 |  this->setEnergyPoints(diamondtrap.getEnergyPoints());
+      |        ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:35:8: note: candidates are: ‘void ClapTrap::setEnergyPoints(unsigned int)’
+   35 |   void setEnergyPoints( unsigned int value );
+      |        ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:35:8: note:                 ‘void ClapTrap::setEnergyPoints(unsigned int)’
+DiamondTrap.cpp:51:36: error: request for member ‘getEnergyPoints’ is ambiguous
+   51 |  this->setEnergyPoints(diamondtrap.getEnergyPoints());
+      |                                    ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:30:16: note: candidates are: ‘unsigned int ClapTrap::getEnergyPoints() const’
+   30 |   unsigned int getEnergyPoints( void ) const;
+      |                ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:30:16: note:                 ‘unsigned int ClapTrap::getEnergyPoints() const’
+DiamondTrap.cpp:52:8: error: request for member ‘setAttackDamage’ is ambiguous
+   52 |  this->setAttackDamage(diamondtrap.getAttackDamage());
+      |        ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:36:8: note: candidates are: ‘void ClapTrap::setAttackDamage(unsigned int)’
+   36 |   void setAttackDamage( unsigned int value );
+      |        ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:36:8: note:                 ‘void ClapTrap::setAttackDamage(unsigned int)’
+DiamondTrap.cpp:52:36: error: request for member ‘getAttackDamage’ is ambiguous
+   52 |  this->setAttackDamage(diamondtrap.getAttackDamage());
+      |                                    ^~~~~~~~~~~~~~~
+In file included from ./ScavTrap.hpp:16,
+                 from ./DiamondTrap.hpp:16,
+                 from DiamondTrap.cpp:13:
+./ClapTrap.hpp:31:16: note: candidates are: ‘unsigned int ClapTrap::getAttackDamage() const’
+   31 |   unsigned int getAttackDamage( void ) const;
+      |                ^~~~~~~~~~~~~~~
+./ClapTrap.hpp:31:16: note:                 ‘unsigned int ClapTrap::getAttackDamage() const’
+cc1plus: all warnings being treated as errors
+make: *** [Makefile:13 : DiamondTrap.o] Erreur 1
