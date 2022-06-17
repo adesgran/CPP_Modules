@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:28:27 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/13 17:55:53 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/17 14:38:54 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 ClapTrap::ClapTrap(std::string name)
 {
+	std::cout << "\033[0;36m[CLASS_INFO] ClapTrap constructor called\033[0m" << std::endl;
 	this->_name = name;
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
@@ -22,6 +23,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &claptrap)
 {
+	std::cout << "\033[0;36m[CLASS_INFO] ClapTrap copy constructor called\033[0m" << std::endl;
 	this->_name = claptrap.getName();
 	this->_hitPoints = claptrap.getHitPoints();
 	this->_energyPoints = claptrap.getEnergyPoints();
@@ -30,11 +32,12 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap)
 
 ClapTrap::~ClapTrap(void)
 {
-
+	std::cout << "\033[0;36m[CLASS_INFO] ClapTrap destructor called\033[0m" << std::endl;
 };
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 {
+	std::cout << "\033[0;36m[CLASS_INFO] ClapTrap copy operator called\033[0m" << std::endl;
 	this->_name = claptrap.getName();
 	this->_hitPoints = claptrap.getHitPoints();
 	this->_energyPoints = claptrap.getEnergyPoints();
@@ -62,16 +65,36 @@ unsigned int	ClapTrap::getAttackDamage( void ) const
 	return (this->_attackDamage);
 }
 
+void	ClapTrap::setName( std::string name )
+{
+	this->_name = name;
+}
+
+void	ClapTrap::setHitPoints( unsigned int value )
+{
+	this->_hitPoints = value;
+}
+
+void	ClapTrap::setEnergyPoints( unsigned int value )
+{
+	this->_energyPoints = value;
+}
+
+void	ClapTrap::setAttackDamage( unsigned int value )
+{
+	this->_attackDamage = value;
+}
+
 void	ClapTrap::attack(const std::string &target)
 {
 	if (this->_hitPoints == 0)
 	{
-		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " is dead" << std::endl;
+		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " is dead\033[0m" << std::endl;
 		return ;
 	}
 	if (this->_energyPoints == 0)
 	{
-		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " don't get enougth energy" << std::endl;
+		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " don't get enougth energy\033[0m" << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap \033[0;32m" << this->_name << "\033[0m attack \033[0;31m" << target << "\033[0m, causing \033[0;31m" << this->_attackDamage << "\033[0m points of damage!" << std::endl;
@@ -85,7 +108,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hitPoints == 0)
 	{
-		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " is already dead" << std::endl;
+		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " is already dead\033[0m" << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap \033[0;32m" << this->_name << "\033[0m take \033[0;31m" << amount << "\033[0m damages" << std::endl;
@@ -105,12 +128,12 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_hitPoints == 0)
 	{
-		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " is already dead" << std::endl;
+		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " is already dead\033[0m" << std::endl;
 		return ;
 	}
 	if (this->_energyPoints == 0)
 	{
-		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " don't get enougth energy" << std::endl;
+		std::cout << "\033[0;33mWarning : ClapTrap " << this->_name << " don't get enougth energy\033[0m" << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap \033[0;32m" << this->_name << "\033[0m recover \033[0;32m" << amount << "\033[0m life points by repairing himself" << std::endl;

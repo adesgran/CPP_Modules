@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:26:48 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/13 16:38:17 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/17 14:18:57 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ class ClapTrap {
 		unsigned int	getHitPoints( void ) const;
 		unsigned int	getEnergyPoints( void ) const;
 		unsigned int	getAttackDamage( void ) const;
+
+		void	setName( std::string name );
+		void	setHitPoints( unsigned int value );
+		void	setEnergyPoints( unsigned int value );
+		void	setAttackDamage( unsigned int value );
 
 		void	attack(const std::string &target);
 		void	takeDamage(unsigned int amount);
