@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:38:34 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/17 15:51:57 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/17 16:54:09 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,5 @@ FragTrap &FragTrap::operator=(const FragTrap &fragtrap)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap \033[0;34m" << this->getName() << "\033[0m want a high five" << std::endl;
+	std::cout << "FragTrap \033[0;32m" << this->getName() << "\033[0m want a high five" << std::endl;
 }
