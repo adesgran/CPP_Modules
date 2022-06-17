@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:26:48 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/17 14:18:57 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:05:33 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 class ClapTrap {
 	public:
+		ClapTrap( void );
 		ClapTrap( std::string name );
 		ClapTrap( const ClapTrap &claptrap );
 		~ClapTrap( void );
