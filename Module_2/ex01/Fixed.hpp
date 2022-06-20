@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:15:22 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/12 23:52:54 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:28:44 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Fixed {
 		Fixed &operator=( const Fixed &fixed );
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
+		int		getNBits( void ) const;
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
 

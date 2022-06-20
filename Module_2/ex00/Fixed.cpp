@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:19:15 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/12 23:52:12 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:27:27 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,9 @@ void	Fixed::setRawBits(int i)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->_rawBits = i;
+}
+
+int	Fixed::getNBits ( void ) const
+{
+	return (this->_n_bits);
 }

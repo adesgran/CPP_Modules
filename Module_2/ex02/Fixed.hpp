@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:15:22 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/13 14:44:51 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:29:36 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Fixed {
 		~Fixed( void );
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
+		int		getNBits( void ) const;
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
 		//////Operator Overload

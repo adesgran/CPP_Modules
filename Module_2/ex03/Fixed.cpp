@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:19:15 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/13 14:50:06 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:41:43 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ int	Fixed::getRawBits(void) const
 void	Fixed::setRawBits(int i)
 {
 	this->_rawBits = i;
+}
+
+int	Fixed::getNBits ( void ) const
+{
+	return (this->_n_bits);
 }
 
 int	Fixed::toInt(void) const
