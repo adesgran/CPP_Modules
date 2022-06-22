@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:38:34 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/17 16:54:09 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/22 10:40:32 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 FragTrap::FragTrap(void) : ClapTrap::ClapTrap()
 {
 	std::cout << "\033[0;36m[CLASS_INFO] FragTrap empty constructor called\033[0m" << std::endl;
+	this->_name = "UNKNOWN FragTrap"
 	this->setHitPoints(100);
 	this->setEnergyPoints(100);
 	this->setAttackDamage(30);

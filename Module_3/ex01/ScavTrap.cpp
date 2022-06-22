@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 14:44:11 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/17 15:32:53 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/22 10:40:02 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 ScavTrap::ScavTrap(void) : ClapTrap::ClapTrap()
 {
 	std::cout << "\033[0;36m[CLASS_INFO] ScavTrap empty constructor called\033[0m" << std::endl;
+	this->_name = "UNKNOWN ScavTrap";
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
 	this->setAttackDamage(20);

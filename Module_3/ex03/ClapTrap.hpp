@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 16:26:48 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/17 17:29:53 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/22 11:14:38 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ class ClapTrap
 
 
 	private:
-
-	protected:
-		std::string		_name;
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;
 		unsigned int	_attackDamage;
+
+	protected:
+		std::string		_name;
 
 };
 
