@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 13:56:38 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/16 15:36:30 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/22 11:54:52 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 # include <Animal.hpp>
+# include <Brain.hpp>
 # include <iostream>
 # include <string>
 
@@ -27,7 +28,7 @@ class Dog : public Animal {
 
 
 	private:
-
+		Brain *_brain;
 };
 
 #endif
