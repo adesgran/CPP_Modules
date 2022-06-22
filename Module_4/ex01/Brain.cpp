@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 13:38:24 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/22 13:48:09 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:31:38 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,17 @@ void	Brain::setIdeas( std::string ideas[100])
 		this->_ideas[i] = ideas[i];
 }
 
-std::string	*Brain::getIdeas(void)
+void	Brain::setIdeas( std::string idea, int index)
+{
+	this->_ideas[index] = idea;
+}
+
+const std::string	*Brain::getIdeas(void)const
 {
 	return (&(this->_ideas[0]));
+}
+
+const std::string	Brain::getIdeas(int index)const
+{
+	return (this->_ideas[index]);
 }

@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 13:56:32 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/22 13:37:33 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:17:57 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Cat::Cat(const Cat &cat) : Animal::Animal("Cat")
 Cat::~Cat(void)
 {
 	std::cout << "Cat destructor called" << std::endl;
+	delete this->_brain;
 };
 
 Cat &Cat::operator=(const Cat &cat)

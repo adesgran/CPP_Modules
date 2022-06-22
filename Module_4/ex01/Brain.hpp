@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:52:23 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/22 13:48:16 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/22 14:31:57 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ class Brain {
 		~Brain( void );
 		Brain &operator=( const Brain &brain );
 		void	setIdeas( std::string ideas[100]);
-		std::string		*getIdeas( void );
+		void	setIdeas( std::string ideas, int index );
+		const std::string		*getIdeas( void )const;
+		const std::string		getIdeas( int index )const;
 
 
 	private:
