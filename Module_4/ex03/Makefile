@@ -3,7 +3,7 @@ NAME = interface
 CC = c++
 C_FLAGS = -Wall -Wextra -Werror -std=c++98
 
-C_FILES = main.cpp AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp IMateriaSource.cpp
+C_FILES = AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp main.cpp
 O_FILES = $(C_FILES:.cpp=.o)
 
 INCLUDES = -I .
