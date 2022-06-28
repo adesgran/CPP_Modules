@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 14:25:43 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/28 11:05:04 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:15:43 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,14 @@ int main( void )
 	bur.setGrade(61);
 	bur.signForm(*form);
 
-	std::cout << bur << std::endl << form << std::endl;
+	std::cout << bur << std::endl << *form << std::endl;
 
-	bur.setGrade(60);
-	bur.signForm(*form);
+	bur.setGrade(45);
+	bur.executeForm(*form);
 
-	std::cout << bur << std::endl << form << std::endl;
+	std::cout << bur << std::endl << *form << std::endl;
 
+	delete form;
 	return (0);
 
 }

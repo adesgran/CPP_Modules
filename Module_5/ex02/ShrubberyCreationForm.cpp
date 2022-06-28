@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:23:37 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/28 11:14:08 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:54:28 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ void	ShrubberyCreationForm::execute( Bureaucrat const & executor ) const
 {
 	if (executor.getGrade() > this->getGradeToExec())
 		throw ShrubberyCreationForm::GradeTooLowException();
-	std::ofstream outfile (this->getTarget().append("_shrubbery"));
+	std::string outfilename = this->getTarget();
+	outfilename.append("_shrubbery");
+	std::ofstream outfile (outfilename.c_str());
 	if (!outfile || outfile.is_open() == false)
 		throw ShrubberyCreationForm::CantOpenFileException();
 	outfile << "       _-_" << std::endl;	

@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:17:31 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/28 11:13:01 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:56:09 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 # include <iostream>
 # include <string>
+# include <fstream>
 # include <Form.hpp>
 # include <Bureaucrat.hpp>
 

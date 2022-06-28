@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 14:25:41 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/25 15:56:44 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:59:47 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Bureaucrat {
 		void	setGrade( int grade );
 
 		void	signForm( Form &form );
+		void	executeForm(Form const &form);
 
 
 
@@ -59,6 +60,14 @@ class Bureaucrat {
 				virtual const char *what() const throw()
 				{
 					return ("Grade is too low");
+				}
+		};
+		class FormNotSignedException : public std::exception
+		{
+			public :
+				virtual const char *what() const throw()
+				{
+					return ("Form need to be signed before execution");
 				}
 		};
 

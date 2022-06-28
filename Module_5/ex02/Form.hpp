@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 15:08:19 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/28 11:01:37 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/28 13:11:43 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Form {
 		Form( std::string name );
 		Form( std::string name, int gradeToSign, int gradeToExec );
 		Form( const Form &form );
-		~Form( void );
+		virtual ~Form( void );
 		Form &operator=( const Form &form );
 
 		std::string const	getName( void ) const;
