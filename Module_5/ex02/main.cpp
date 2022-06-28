@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 14:25:43 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/25 16:23:36 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/28 11:05:04 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <string>
 #include <Bureaucrat.hpp>
 #include <ShrubberyCreationForm.hpp>
+#include <RobotomyRequestForm.hpp>
+#include <PresidentialPardonForm.hpp>
 
 int main( void )
 {
@@ -38,25 +40,16 @@ int main( void )
 	std::cout << bur << std::endl;
 
 
-	Form form("Contract", 60, 60);
+	Form *form = new RobotomyRequestForm("Joe");
 	bur.setGrade(61);
-	bur.signForm(form);
+	bur.signForm(*form);
 
 	std::cout << bur << std::endl << form << std::endl;
 
 	bur.setGrade(60);
-	bur.signForm(form);
+	bur.signForm(*form);
 
 	std::cout << bur << std::endl << form << std::endl;
-
-	try
-	{
-		Form form2("FakeForm", 1, 151);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
 
 	return (0);
 

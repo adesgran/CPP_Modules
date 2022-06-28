@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:57:26 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/25 16:57:56 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/28 11:10:00 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,32 @@
 # include <iostream>
 # include <string>
 # include <Form.hpp>
-# include <Bureaucrate.hpp>
+# include <Bureaucrat.hpp>
+# include <stdlib.h>
 
-class RobotomyRequestForm {
+class RobotomyRequestForm : public Form 
+{
 	public:
 		RobotomyRequestForm( std::string target );
 		RobotomyRequestForm( const RobotomyRequestForm &robotomyrequestform );
 		~RobotomyRequestForm( void );
 		RobotomyRequestForm &operator=( const RobotomyRequestForm &robotomyrequestform );
 
+		void	execute( Bureaucrat const & executor ) const;
+		std::string const	getTarget( void ) const;
+
 
 	private:
 		std::string const	_target;
 
+		class GradeTooLowException : public std::exception 
+		{
+			public:
+				virtual const char	*what( void ) const throw()
+				{
+					return ("Grade too low");
+				}
+		};
 };
 
 #endif

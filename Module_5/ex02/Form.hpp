@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 15:08:19 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/25 16:42:41 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/06/28 11:01:37 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Form {
 		int 				getGradeToExec( void ) const;
 
 		void	beSigned( Bureaucrat &bur );
-		void	execute( Bureaucrat const & executor ) const = 0;
+		virtual void	execute( Bureaucrat const & executor ) const = 0;
 
 
 	private:

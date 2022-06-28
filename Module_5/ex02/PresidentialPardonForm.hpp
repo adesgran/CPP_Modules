@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 16:17:31 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/28 11:13:01 by adesgran         ###   ########.fr       */
+/*   Created: 2022/06/28 10:49:50 by adesgran          #+#    #+#             */
+/*   Updated: 2022/06/28 11:10:34 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # define DEBUG 1
 
@@ -20,16 +20,15 @@
 # include <Form.hpp>
 # include <Bureaucrat.hpp>
 
-class ShrubberyCreationForm : public Form
+class PresidentialPardonForm : public Form
 {
 	public:
-		ShrubberyCreationForm( std::string target );
-		ShrubberyCreationForm( const ShrubberyCreationForm &shrubberycreationform );
-		~ShrubberyCreationForm( void );
-		ShrubberyCreationForm &operator=( const ShrubberyCreationForm &shrubberycreationform );
+		PresidentialPardonForm( std::string target );
+		PresidentialPardonForm( const PresidentialPardonForm &presidentialpardonform );
+		~PresidentialPardonForm( void );
+		PresidentialPardonForm &operator=( const PresidentialPardonForm &presidentialpardonform );
 
 		std::string const	getTarget( void ) const;
-
 		void	execute( Bureaucrat const & executor ) const;
 
 	private:
@@ -43,15 +42,6 @@ class ShrubberyCreationForm : public Form
 					return ("Grade too low");
 				}
 		};
-		class CantOpenFileException : public std::exception 
-		{
-			public:
-				virtual const char	*what( void ) const throw()
-				{
-					return ("Can't open file in write mode");
-				}
-		};
-
 };
 
 #endif
