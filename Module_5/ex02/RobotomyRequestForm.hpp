@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:57:26 by adesgran          #+#    #+#             */
-/*   Updated: 2022/06/28 11:10:00 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/07/09 12:18:32 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <Form.hpp>
 # include <Bureaucrat.hpp>
 # include <stdlib.h>
+# include <time.h>
+# include <sys/time.h>
 
 class RobotomyRequestForm : public Form 
 {
