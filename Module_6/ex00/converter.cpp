@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 17:47:10 by adesgran          #+#    #+#             */
-/*   Updated: 2022/07/10 11:53:45 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/07/13 14:26:48 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	get_precision(std::string str)
 {
 	int	i = 1;
 	int	j = 0;
-	while (str[j] != '.')
+	while (str[j] != '.' && str[j])
 		j++;
-	while (isdigit(str[j + i + 1]))
+	while (isdigit(str[j + i + 1]) && str[j] && str[j + i + 1])
 		i++;
 	return (i + j + 1);
 }
@@ -32,7 +32,7 @@ static void	convert_from_char(std::string str)
 	float f = static_cast<float>(i);
 	double d = static_cast<double>(i);
 
-	std::cout << "char: " << c << std::endl;
+	std::cout << "char: '" << c  << "'" << std::endl;
 	std::cout << "int: " << i << std::endl;
 	std::cout << "float: " << f << ".0f" <<std::endl;
 	std::cout << "double: " << d << ".0" << std::endl;
@@ -46,22 +46,15 @@ static void	convert_from_int(std::string str)
 	float f = static_cast<float>(d);
 
 	if (isprint(c) && d < 256 && d > 0)
-		std::cout << "char: " << c << std::endl;
+		std::cout << "char: '" << c  << "'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
 	if (d >= INT_MIN && d <= INT_MAX)
 	{
 		std::cout << "int: " << i << std::endl;
-		if (d > 999999 || d < -999999)
-		{
-			std::cout << "float: " << f << "f" <<std::endl;
-			std::cout << "double: " << d << std::endl;
-		}
-		else
-		{
-			std::cout << "float: " << f << ".0f" <<std::endl;
-			std::cout << "double: " << d << ".0" << std::endl;
-		}
+		std::cout.precision(get_precision(str));
+		std::cout << "float: " << f << ".0f" <<std::endl;
+		std::cout << "double: " << d << ".0" << std::endl;
 	}
 	else
 	{
@@ -79,7 +72,7 @@ static void	convert_from_float(std::string str)
 	float f = static_cast<float>(d);
 
 	if (isprint(c) && d < 256 && d > 0)
-		std::cout << "char: " << c << std::endl;
+		std::cout << "char: '" << c  << "'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
 	if (d >= FLT_MIN && d <= FLT_MAX)
@@ -91,8 +84,6 @@ static void	convert_from_float(std::string str)
 		std::cout.precision(get_precision(str));
 		std::cout << "float: " << f << ".0f" <<std::endl;
 		std::cout << "double: " << d << ".0" << std::endl;
-		std::cout << "float: " << f / 1 <<std::endl;
-		std::cout << "double: " << d / 1 << std::endl;
 	}
 	else
 	{
@@ -110,7 +101,7 @@ static void	convert_from_double(std::string str)
 	float f = static_cast<float>(d);
 
 	if (isprint(c) && d < 256 && d > 0)
-		std::cout << "char: " << c << std::endl;
+		std::cout << "char: '" << c  << "'" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
 	if (d >= INT_MIN && d <= INT_MAX)
