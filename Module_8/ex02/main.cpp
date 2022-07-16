@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:47:23 by adesgran          #+#    #+#             */
-/*   Updated: 2022/07/16 15:29:14 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/07/16 16:59:52 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void test_stack ( void )
 
 void test_perso( void )
 {
-
+	std::cout << "\033[0;31mNeed to implement tests\033[0m" << std::endl;
 }
 
 int main( void )
