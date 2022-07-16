@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 19:36:19 by adesgran          #+#    #+#             */
-/*   Updated: 2022/07/15 20:54:13 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/07/16 12:37:54 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,10 @@ int	Span::longestSpan(void)
 	return (max - min);
 }
 
-std::vector<int> const	Span::getNumbers( void ) const
-{
-	return (this->_numbers);
-}
-
-Span &Span::operator+( const std::vector<int> v )
+void	Span::push_back( const std::vector<int> v )
 {
 	for (unsigned int i = 0; i < v.size(); i++)
 		this->addNumber(v[i]);
-	return (*this);
 }
 
 const char	*Span::FullSpanException::what( void ) const throw()

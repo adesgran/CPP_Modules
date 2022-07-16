@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 19:34:08 by adesgran          #+#    #+#             */
-/*   Updated: 2022/07/15 20:53:33 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/07/16 12:37:58 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ class Span {
 		int		shortestSpan( void );
 		int		longestSpan( void );
 
-		std::vector<int> const	getNumbers( void ) const;
-		Span &operator+( const std::vector<int> v );
+		void	push_back( const std::vector<int> v );
 
 	private:
 		std::vector<int>	_numbers;
