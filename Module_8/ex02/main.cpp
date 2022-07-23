@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:47:23 by adesgran          #+#    #+#             */
-/*   Updated: 2022/07/16 16:59:52 by adesgran         ###   ########.fr       */
+/*   Updated: 2022/07/23 13:05:48 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	test_list ( void )
 	mstack.push_back(3);
 	mstack.push_back(5);
 	mstack.push_back(737);
-	//[...]
 	mstack.push_back(0);
 	std::list<int>::iterator it = mstack.begin();
 	std::list<int>::iterator ite = mstack.end();
@@ -51,7 +50,6 @@ void test_stack ( void )
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -65,19 +63,12 @@ void test_stack ( void )
 	std::stack<int> s(mstack);
 }
 
-void test_perso( void )
-{
-	std::cout << "\033[0;31mNeed to implement tests\033[0m" << std::endl;
-}
-
 int main( void )
 {
 	std::cout << "\033[0;33m" << "//////////////STACK/////////////" << "\033[0m" << std::endl;
 	test_stack();
 	std::cout << "\033[0;33m" << "//////////////LIST//////////////" << "\033[0m" << std::endl;
 	test_list();
-	std::cout << "\033[0;33m" << "//////////////PERSO/////////////" << "\033[0m" << std::endl;
-	test_perso();
 	return (0);
 
 }
