@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:44:29 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/21 16:52:03 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:35:00 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ BitcoinExchange::BitcoinExchange( void )
 {
 	std::ifstream	datafile("data.csv");
 	std::string		line;
+
+	if ( !datafile || !datafile.is_open() )
+	{
+		std::cout << "btc : Can't open \"data.csv\"" << std::endl;
+		return ;
+	}
 
 	std::getline(datafile, line);
 
@@ -40,6 +46,11 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &bitcoinexchan
 {
 	convert_map = bitcoinexchange.convert_map;
 	return (*this);
+}
+
+bool	BitcoinExchange::is_empty( void )
+{
+	return (convert_map.empty());
 }
 
 

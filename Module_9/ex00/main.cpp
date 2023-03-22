@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:33:59 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/21 17:27:06 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:35:57 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ bool check_date( std::string date )
 {
 	if ( date.size() != 10 )
 		return (false);
-	if ( date[4] != '-' || date[6] != '-' )
+	if ( date[4] != '-' || date[7] != '-' )
 		return (false);
-	date[4] = 0;
-	date[6] = 0;
-	for (std::string:iterator it = date.begin(); it != date.end(); it++)
+	date[4] = '0';
+	date[7] = '0';
+	for (std::string::iterator it = date.begin(); it != date.end(); it++)
 	{
 		if ( !isdigit(*it) )
 			return (false);
@@ -38,15 +38,74 @@ bool check_date( std::string date )
 	return (true);
 }
 
-int	check_line( std::string line )
+int	check_price( std::string price )
+{
+	if ( price[0] == '-' )
+		return (NEGATIVE_NUMBER);
+	std::string::size_type	dot_pos = price.find('.');
+	if ( dot_pos == 0 )
+	{
+		for (std::string::iterator it = price.begin(); it != price.end(); it++)
+		{
+			if (!isdigit(*it))
+				return (BAD_INPUT);
+		}
+		if ( price.size() > 4 || std::atoi(price.c_str()) > 1000 )
+			return (LARGE_NUMBER);
+	}
+	else
+	{
+		std::string price_int = price.substr(0, dot_pos);
+		std::string price_dec = price.substr(dot_pos + 1);
+		for (std::string::iterator it = price_int.begin(); it != price_int.end(); it++)
+		{
+			if (!isdigit(*it))
+				return (BAD_INPUT);
+		}
+		for (std::string::iterator it = price_dec.begin(); it != price_dec.end(); it++)
+		{
+			if (!isdigit(*it))
+				return (BAD_INPUT);
+		}
+		if ( price_int.size() > 4 || std::atof(price.c_str()) > 1000 )
+			return (LARGE_NUMBER);
+	}
+	return (0);
+
+
+}
+
+bool	check_line( std::string line )
 {
 	std::string::size_type	split_pos = line.find(" | ");
+	if (split_pos != 10)
+	{
+		std::cout << "Error: bad input => " << line << std::endl;
+		return (false);
+	}
 	std::string date = line.substr(0, split_pos);
+	std::string price = line.substr(split_pos + 3);
+
+	//std::cout << "Date : \"" << date << "\"  Price : \"" << price << "\"" << std::endl;
 
 	if ( !check_date(date) )
-		return (BAD_INPUT);
+	{
+		std::cout << "Error: bad input => " << date << std::endl;
+		return (false);
+	}
+	switch(check_price(price)) {
+		case BAD_INPUT :
+			std::cout << "Error: bad input => " << price << std::endl;
+			return (false);
+		case NEGATIVE_NUMBER:
+			std::cout << "Error: not a positive number." << std::endl;
+			return (false);
+		case LARGE_NUMBER:
+			std::cout << "Error: too large a number." << std::endl;
+			return (false);
+	}
 
-	return (OK);
+	return (true);
 }
 
 
@@ -55,11 +114,14 @@ bool	check_file( std::ifstream &infile )
 {
 	if ( !infile || !infile.is_open() )
 		return (false);
+	std::cout << "Checkup" << std::endl;
 	std::string line;
 	if ( !std::getline(infile, line) )
 		return (false);
+	std::cout << "Checkup" << std::endl;
 	if ( line != "date | value" )
 		return (false);
+	std::cout << "Checkup" << std::endl;
 	return (true);
 }
 
@@ -77,16 +139,32 @@ int main(int ac, char **av)
 		return (2);
 	}
 
+	BitcoinExchange bce;
+
+	if ( bce.is_empty() )
+	{
+		std::cout << "btc : Error while generating NitcoinExchange object : object is empty, program will return" << std::endl;
+		return (3);
+	}
+
 	std::ifstream	infile(av[1]);
 	if ( !check_file( infile ) )
 	{
 		std::cout << "btc : Please send a valid input file" << std::endl;
 	}
 
-	BitcoinExchange bce;
 
 
 	std::string line;
+	while ( std::getline(infile, line) )
+	{
+		if (check_line(line))
+		{
+			std::string date = line.substr(0, 10);
+			float price = std::atof(line.substr(13).c_str());
+			std::cout << date <<  " => " << price << " = " << bce.convert(date, price) << std::endl;
+		}
+	}
 
 	return (0);
 }

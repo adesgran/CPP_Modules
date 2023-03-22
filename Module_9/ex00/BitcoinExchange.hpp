@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:35:07 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/21 16:51:48 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/22 12:29:41 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ class BitcoinExchange {
 		~BitcoinExchange( void );
 		BitcoinExchange &operator=( const BitcoinExchange &bitcoinexchange );
 
+		bool	is_empty( void );
 		float	convert( std::string date, float value );
 
 
 	private:
 		std::map<std::string, float> convert_map;
-
 };
 
 #endif
