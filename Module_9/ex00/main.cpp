@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:33:59 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/22 13:35:57 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/30 04:19:36 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <BitcoinExchange.hpp>
 #include <stdlib.h>
 #include <fstream>
+#include <sstream>
+#include <stdexcept>
 
 #define OK 0
 #define BAD_INPUT 1
@@ -40,6 +42,22 @@ bool check_date( std::string date )
 
 int	check_price( std::string price )
 {
+	std::stringstream ss;
+	long long int res;
+	try
+	{
+		ss << price;
+		ss >> res;
+	}
+	catch (std::exception const &e)
+	{
+		return (BAD_INPUT);
+	}
+	if (res < 0)
+		return (NEGATIVE_NUMBER);
+	if (res > 1000)
+		return (LARGE_NUMBER);
+	/*
 	if ( price[0] == '-' )
 		return (NEGATIVE_NUMBER);
 	std::string::size_type	dot_pos = price.find('.');
@@ -70,6 +88,7 @@ int	check_price( std::string price )
 		if ( price_int.size() > 4 || std::atof(price.c_str()) > 1000 )
 			return (LARGE_NUMBER);
 	}
+	*/
 	return (0);
 
 
@@ -161,7 +180,10 @@ int main(int ac, char **av)
 		if (check_line(line))
 		{
 			std::string date = line.substr(0, 10);
-			float price = std::atof(line.substr(13).c_str());
+			int price; 
+			std::stringstream ss;
+			ss << std::atof(line.substr(13).c_str());
+			ss >> price;
 			std::cout << date <<  " => " << price << " = " << bce.convert(date, price) << std::endl;
 		}
 	}

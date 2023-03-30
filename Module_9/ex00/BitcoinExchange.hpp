@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:35:07 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/22 12:29:41 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/30 04:01:53 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <map>
 # include <fstream>
 # include <stdlib.h>
+# include <sstream>
 
 class BitcoinExchange {
 	public:

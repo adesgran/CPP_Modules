@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:44:29 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/22 13:35:00 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/30 04:24:47 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ BitcoinExchange::BitcoinExchange( void )
 	while ( std::getline(datafile, line) )
 	{
 		std::string::size_type	split_it = line.find(',');
-		convert_map.insert( std::map<std::string, float>::value_type( line.substr(0, split_it), std::atof( line.substr( split_it + 1 ).c_str() ) ) );
+		float	rate;
+		std::stringstream	ss;
+		ss << line.substr(split_it + 1);
+		ss >> rate;
+		convert_map.insert( std::map<std::string, float>::value_type( line.substr(0, split_it), rate ) );
 	}
 }
 
@@ -56,5 +60,5 @@ bool	BitcoinExchange::is_empty( void )
 
 float	BitcoinExchange::convert( std::string date, float value )
 {
-	return ( convert_map.lower_bound(date)->second * value );
+	return ( (--convert_map.upper_bound(date))->second * value );
 }
