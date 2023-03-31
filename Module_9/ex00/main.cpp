@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:33:59 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/30 04:19:36 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/31 11:58:50 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ int main(int ac, char **av)
 
 	if ( bce.is_empty() )
 	{
-		std::cout << "btc : Error while generating NitcoinExchange object : object is empty, program will return" << std::endl;
+		std::cout << "btc : Error while generating BitcoinExchange object : object is empty, program will return" << std::endl;
 		return (3);
 	}
 
