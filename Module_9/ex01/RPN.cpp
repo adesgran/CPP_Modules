@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 13:42:51 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/23 14:26:42 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:36:14 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ float	RPN::solve( char *expr )
 					_stack.push(first * second);
 					break;
 				case '/' :
+					if (second == 0)
+						throw RPN::DivisionByZeroException();
 					_stack.push(first / second);
 					break;
 				default :
@@ -75,5 +77,4 @@ float	RPN::solve( char *expr )
 	if ( _stack.size() != 1 )
 		throw RPN::InvalidInputException();
 	return ( _stack.top() );
-
 }

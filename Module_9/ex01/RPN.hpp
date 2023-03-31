@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 13:23:38 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/23 14:36:11 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:36:49 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,15 @@ class RPN {
 					virtual const char *what() const throw()
 					{
 						return ("Invalid Input");
+					}
+			};
+
+			class DivisionByZeroException : public std::exception
+			{
+				public :
+					virtual const char *what() const throw()
+					{
+						return ("Division by 0");
 					}
 			};
 

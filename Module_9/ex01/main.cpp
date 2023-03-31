@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 13:16:15 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/23 14:28:40 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:37:52 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main(int ac, char **av)
 	}
 	catch (std::exception &s)
 	{
-		std::cout << "\033[0;31mError\033[0m" << std::endl;
+		std::cout << "\033[0;31mError : " << s.what() << "\033[0m" << std::endl;
 	}
 	return (0);
 }
