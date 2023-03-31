@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:44:29 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/30 04:24:47 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:32:40 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,9 @@ bool	BitcoinExchange::is_empty( void )
 
 float	BitcoinExchange::convert( std::string date, float value )
 {
-	return ( (--convert_map.upper_bound(date))->second * value );
+	std::map<std::string, float>::iterator	it = convert_map.upper_bound(date);
+	if ( it == convert_map.begin() )
+		return (0);
+	it--;
+	return ( it->second * value );
 }

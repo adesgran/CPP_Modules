@@ -6,7 +6,7 @@
 /*   By: adesgran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 15:33:59 by adesgran          #+#    #+#             */
-/*   Updated: 2023/03/31 11:58:50 by adesgran         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:30:35 by adesgran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ bool check_date( std::string date )
 		return (false);
 	date[4] = '0';
 	date[7] = '0';
+	if (atoi(date.substr(5, 2).c_str()) > 12)
+		return (false);
+	if (atoi(date.substr(8, 2).c_str()) > 31)
+		return (false);
 	for (std::string::iterator it = date.begin(); it != date.end(); it++)
 	{
 		if ( !isdigit(*it) )
@@ -57,38 +61,6 @@ int	check_price( std::string price )
 		return (NEGATIVE_NUMBER);
 	if (res > 1000)
 		return (LARGE_NUMBER);
-	/*
-	if ( price[0] == '-' )
-		return (NEGATIVE_NUMBER);
-	std::string::size_type	dot_pos = price.find('.');
-	if ( dot_pos == 0 )
-	{
-		for (std::string::iterator it = price.begin(); it != price.end(); it++)
-		{
-			if (!isdigit(*it))
-				return (BAD_INPUT);
-		}
-		if ( price.size() > 4 || std::atoi(price.c_str()) > 1000 )
-			return (LARGE_NUMBER);
-	}
-	else
-	{
-		std::string price_int = price.substr(0, dot_pos);
-		std::string price_dec = price.substr(dot_pos + 1);
-		for (std::string::iterator it = price_int.begin(); it != price_int.end(); it++)
-		{
-			if (!isdigit(*it))
-				return (BAD_INPUT);
-		}
-		for (std::string::iterator it = price_dec.begin(); it != price_dec.end(); it++)
-		{
-			if (!isdigit(*it))
-				return (BAD_INPUT);
-		}
-		if ( price_int.size() > 4 || std::atof(price.c_str()) > 1000 )
-			return (LARGE_NUMBER);
-	}
-	*/
 	return (0);
 
 
@@ -104,8 +76,6 @@ bool	check_line( std::string line )
 	}
 	std::string date = line.substr(0, split_pos);
 	std::string price = line.substr(split_pos + 3);
-
-	//std::cout << "Date : \"" << date << "\"  Price : \"" << price << "\"" << std::endl;
 
 	if ( !check_date(date) )
 	{
@@ -133,14 +103,11 @@ bool	check_file( std::ifstream &infile )
 {
 	if ( !infile || !infile.is_open() )
 		return (false);
-	std::cout << "Checkup" << std::endl;
 	std::string line;
 	if ( !std::getline(infile, line) )
 		return (false);
-	std::cout << "Checkup" << std::endl;
 	if ( line != "date | value" )
 		return (false);
-	std::cout << "Checkup" << std::endl;
 	return (true);
 }
 
@@ -180,7 +147,7 @@ int main(int ac, char **av)
 		if (check_line(line))
 		{
 			std::string date = line.substr(0, 10);
-			int price; 
+			float price; 
 			std::stringstream ss;
 			ss << std::atof(line.substr(13).c_str());
 			ss >> price;
